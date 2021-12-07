@@ -1,7 +1,7 @@
 
 import { GlobalStyle } from './styles/global'
 
-import { Options } from './components/Options/index'
+import { Home } from './components/Home/index'
 
 export const App = () => {
 
@@ -15,7 +15,7 @@ export const App = () => {
 
       <main>
 
-        <Options />
+        <Home />
 
       </main>
 
