@@ -1,17 +1,31 @@
+import { useState } from 'react'
 
-import { Div } from './styles'
+import { View, Container } from './styles'
 
 export const Options = () => {
 
+    const [ rangeHeight , setRangeHeight ] = useState(8)
+
+    const getRangeWidth = () => {
+
+        let rangeWidth = parseInt(document.querySelector('#input-range').value)
+        setRangeHeight(rangeWidth)
+
+    }
+
     return (
 
-        <Div>
+        <Container>
+
+            <View type = "text" />
 
             <section>
 
-                <input type = "text" />
+                <div>The password width is: { rangeHeight }</div>
                 <div>
-                    <input type = "range" min = "4" max = "12" step = "1" />
+
+                    <input type = "range" id = "input-range" value = { rangeHeight } min = "4" max = "12" step = "1" onChange = { getRangeWidth } />
+
                 </div>
 
             </section>
@@ -24,7 +38,7 @@ export const Options = () => {
                 
             </section>
 
-        </Div>
+        </Container>
 
     )
     

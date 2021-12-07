@@ -1,9 +1,7 @@
 
 import { GlobalStyle } from './styles/global'
 
-import { View } from './components/View/index'
 import { Options } from './components/Options/index'
-import { Button } from './components/Button/index'
 
 export const App = () => {
 
@@ -17,9 +15,7 @@ export const App = () => {
 
       <main>
 
-       <View />
-       <Options />
-       <Button />
+        <Options />
 
       </main>
 

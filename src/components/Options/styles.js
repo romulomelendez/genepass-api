@@ -1,13 +1,21 @@
 import styled from 'styled-components'
 
-export const Div = styled.div `
+export const Container = styled.div `
 
-    height: 120px;
-    width: 700px;
-    border-radius: 10px;
-    border: 2px groove;
-    margin: 20px auto 10px auto;
-    padding: 10px;
-    background: #fff;
+    max-width: 800px;
+    
+
+`
+
+export const View = styled.input `
+
+   outline: none;
+   padding: 10px;
+   margin: 10px;
+   height: 150px;
+   width: 800px;
+   border-radius: 10px;
+   border: 1px solid black;
+   font-size: 80pt;
 
 `
