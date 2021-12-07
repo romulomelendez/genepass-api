@@ -17,7 +17,11 @@ export const Options = () => {
 
         <Container>
 
-            <View type = "text" />
+            <View type = "text">
+                
+                <h4>123456789123</h4>
+                
+            </View>
 
             <section>
 
