@@ -2,9 +2,26 @@ import styled from 'styled-components'
 
 export const Container = styled.div `
 
+    display: flex;
+    flex-direction: column;
     max-width: 800px;
 
+    button { 
 
+        padding: 10px;
+        height: 50px;
+        width: 200px;
+        border: 1px solid black;
+        border-radius: 10px;
+        margin-left: 610px;
+        background-color: white;
+        font-weight: bold;
+        cursor: pointer;
+        
+    }
+    
+    button:hover { background-color: #cecece; }
+    
 `
 
 export const View = styled.div `
@@ -46,8 +63,8 @@ export const Options = styled(View) `
                 margin: 10px;
         
             }
-            label { margin-top: 7px; }
 
+            label { margin-top: 7px; }
 
         }
 
