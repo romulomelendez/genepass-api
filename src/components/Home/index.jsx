@@ -16,8 +16,24 @@ export const Home = () => {
 
     const createPassword = () => {
 
-        console.log('entrei eh o button!')
+        if ( document.querySelector('.numbers').checked ) {
+            
+            console.log('numbers checkbox is checked')
+        
+        }
+        
+        if ( document.querySelector('.upper-letters').checked ) {
 
+            console.log('checkbox upper-letters is checked')
+
+        }
+        
+        if ( document.querySelector('.lower-letters').checked ) {
+
+            console.log('checkbox lower-letter is checked')
+
+        }
+        
     }
 
     return (
