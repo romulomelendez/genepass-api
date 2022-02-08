@@ -2,6 +2,8 @@ import styled from 'styled-components'
 
 export const Head = styled.header `
 
+    top: 50px;
+
     h1, h4 {
       
         display: flex;
