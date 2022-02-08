@@ -19,6 +19,6 @@ export const GlobalStyle = createGlobalStyle `
     height: 100vh;
     background-color: #f2fff9;
 
-}
+  }
 
 `
