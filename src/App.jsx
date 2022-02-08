@@ -1,7 +1,7 @@
 
 import { GlobalStyle } from './styles/global'
 
-import { Home } from './components/Home/index'
+import { Home } from './Pages/Home'
 
 export const App = () => {
 

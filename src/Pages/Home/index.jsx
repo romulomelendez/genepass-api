@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { Button } from '../../components/Button' 
 import { Header } from '../../components/Header'
 
-import { View, Container, Options } from './styles'
+import { View, Container, Options } from './style'
 
 
 export const Home = () => {
