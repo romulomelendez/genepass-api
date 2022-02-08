@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 
+import { Button } from '../../components/Button' 
+
 import { View, Container, Options } from './styles'
+
 
 export const Home = () => {
 
@@ -86,7 +89,7 @@ export const Home = () => {
 
             </Options>
 
-            <button type = "button" onClick = { createPassword }>CREATE PASSWORD!</button> 
+            <Button />
 
         </Container>
 
