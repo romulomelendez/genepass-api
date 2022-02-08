@@ -5,7 +5,7 @@ import { View, Container, Options } from './styles'
 export const Home = () => {
 
     const [ rangeHeight , setRangeHeight ] = useState(8)
-    const numbersArr = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+    //const numbersArr = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 
     const getRangeWidth = () => {
 
