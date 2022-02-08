@@ -10,11 +10,7 @@ export const App = () => {
     <>
 
       <GlobalStyle />
-      <main>
-
-        <Home />
-
-      </main>
+      <Home />
 
     </>
 
