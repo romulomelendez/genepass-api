@@ -89,7 +89,7 @@ export const Home = () => {
 
             </Options>
 
-            <Button />
+            <Button onClick = { createPassword } />
 
         </Container>
 
