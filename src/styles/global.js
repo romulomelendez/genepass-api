@@ -18,15 +18,6 @@ export const GlobalStyle = createGlobalStyle `
     align-items: center;
     height: 100vh;
     background-color: #f2fff9;
-    
-    h1, h4 {
-      
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 10px;
-      
-    }
 
 }
 
