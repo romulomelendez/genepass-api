@@ -4,6 +4,6 @@ import { Btn } from './styles'
 
 export const Button = () => (
 
-    <button type = "button">CREATE PASSWORD!</button> 
+    <Btn type = "button">CREATE PASSWORD!</Btn> 
 
 )
