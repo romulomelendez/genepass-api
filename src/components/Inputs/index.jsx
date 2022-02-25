@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 
-import { Section } from 'style'
+import { Section } from './style'
 
-export const Input = () => {
+export const Inputs = () => {
 
     const [ rangeHeight , setRangeHeight ] = useState(8)
 
