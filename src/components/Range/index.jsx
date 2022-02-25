@@ -17,12 +17,12 @@ export const Range = () => {
 
         <Section>
 
-                <div>The password width is: { rangeHeight }</div>
-                <div>
+            <div>The password width is: { rangeHeight }</div>
+            <div>
 
-                    <input type = "range" id = "input-range" value = { rangeHeight } min = "4" max = "12" step = "1" onChange = { getRangeWidth } />
+                <input type = "range" id = "input-range" value = { rangeHeight } min = "4" max = "12" step = "1" onChange = { getRangeWidth } />
 
-                </div>
+            </div>
 
         </Section>
 
