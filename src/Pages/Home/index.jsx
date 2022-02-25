@@ -3,6 +3,7 @@ import React from 'react'
 import { Button } from '../../components/Button' 
 import { Header } from '../../components/Header'
 import { Inputs } from '../../components/Inputs'
+import { Range } from '../../components/Range'
 
 import { View, Container, Options } from './style'
 
@@ -45,6 +46,7 @@ export const Home = () => {
 
             <Options>
 
+                <Range />
                 <Inputs />
 
             </Options>
