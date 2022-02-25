@@ -13,7 +13,7 @@ export const Section = styled.section `
         input {
         
             height: 20px;
-            width: 20px;
+            width: 250px;
             margin: 10px;
     
         }
