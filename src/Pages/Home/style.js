@@ -31,28 +31,4 @@ export const Options = styled(View) `
     padding: 20px;
     font-size: 18pt;
 
-    section.checkboxes-section {
-        
-        display: flex;
-        flex-direction: column;
-        
-        div {
-
-            display: flex;
-            flex-direction: row;
-
-            input {
-            
-                height: 20px;
-                width: 20px;
-                margin: 10px;
-        
-            }
-
-            label { margin-top: 7px; }
-
-        }
-
-    }
-
 `

@@ -1,48 +1,57 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-import 'style.js'
+import { Section } from 'style'
 
 export const Input = () => {
+
+    const [ rangeHeight , setRangeHeight ] = useState(8)
+
+    const getRangeWidth = () => {
+
+        let rangeWidth = parseInt(document.querySelector('#input-range').value)
+        setRangeHeight(rangeWidth)
+
+    }
 
     return (
 
         <>
 
-            <section>
+            <Section>
 
-            <div>The password width is: { rangeHeight }</div>
-            <div>
+                <div>The password width is: { rangeHeight }</div>
+                <div>
 
-                <input type = "range" id = "input-range" value = { rangeHeight } min = "4" max = "12" step = "1" onChange = { getRangeWidth } />
+                    <input type = "range" id = "input-range" value = { rangeHeight } min = "4" max = "12" step = "1" onChange = { getRangeWidth } />
 
-            </div>
+                </div>
 
-            </section>
+            </Section>
 
-            <section className = "checkboxes-section">
+            <Section className = "checkboxes-Section">
 
-            <div>
+                <div>
 
-                <input type = "checkbox" className = "numbers" />
-                <label>Numbers</label>
+                    <input type = "checkbox" className = "numbers" />
+                    <label>Numbers</label>
 
-            </div>
+                </div>
 
-            <div>
+                <div>
 
-                <input type = "checkbox" className = "upper-letters" />
-                <label>Upper Letters</label>
+                    <input type = "checkbox" className = "upper-letters" />
+                    <label>Upper Letters</label>
 
-            </div>
+                </div>
 
-            <div>
+                <div>
 
-                <input type = "checkbox" className = "lower-letters" />
-                <label>Lower Letters</label>
+                    <input type = "checkbox" className = "lower-letters" />
+                    <label>Lower Letters</label>
 
-            </div>
+                </div>
 
-            </section>
+            </Section>
 
         </>
 

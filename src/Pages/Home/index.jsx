@@ -1,22 +1,13 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 import { Button } from '../../components/Button' 
 import { Header } from '../../components/Header'
+import { Inputs } from '../../components/Inputs'
 
 import { View, Container, Options } from './style'
 
 
 export const Home = () => {
-
-    const [ rangeHeight , setRangeHeight ] = useState(8)
-    //const numbersArr = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
-
-    const getRangeWidth = () => {
-
-        let rangeWidth = parseInt(document.querySelector('#input-range').value)
-        setRangeHeight(rangeWidth)
-
-    }
 
     const createPassword = () => {
 
@@ -54,7 +45,7 @@ export const Home = () => {
 
             <Options>
 
-                
+                <Inputs />
 
             </Options>
 
