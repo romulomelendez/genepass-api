@@ -1,5 +1,7 @@
 import React from 'react'
 
+import 'style.js'
+
 export const Input = () => {
 
     return (
