@@ -11,6 +11,12 @@ export const Home = () => {
 
     const [ myPassword, setMyPassword ] = useState('')
 
+    const getRandomCaracter = (randomCharacter) => {
+        
+        return String.fromCharCode(randomCharacter)
+    
+    }
+
     const createPassword = () => {
 
         console.log('entrei na função')
@@ -26,14 +32,15 @@ export const Home = () => {
             if ( document.querySelector('.upper-letters').checked ) {
     
                 console.log('checkbox upper-letters is checked')
-                setMyPassword(Math.floor(Math.random() * 26 ) + 97)
-                console.log(myPassword)
-    
+                
             }
             
             if ( document.querySelector('.lower-letters').checked ) {
-    
+                
                 console.log('checkbox lower-letter is checked')
+                let getRandomlowerCharacter = Math.floor(Math.random() * 26 ) + 97
+                const response = getRandomCaracter(getRandomlowerCharacter)
+                setMyPassword(response)
     
             }
 
