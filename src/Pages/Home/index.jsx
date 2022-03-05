@@ -19,8 +19,6 @@ export const Home = () => {
 
     const createPassword = () => {
 
-        console.log('entrei na função')
-
         try {
 
             if ( document.querySelector('.numbers').checked ) {
