@@ -25,24 +25,24 @@ export const Home = () => {
 
             if ( document.querySelector('.numbers').checked ) {
             
-                console.log('numbers checkbox is checked')
+                let getRandomNumber = Math.floor(Math.random() * 10 ) + 48
+                const response = getRandomCaracter(getRandomNumber)
+                setMyPassword(response)
             
             }
             
             if ( document.querySelector('.upper-letters').checked ) {
     
-                console.log('checkbox upper-letters is checked')
-                let getRandomlowerCharacter = Math.floor(Math.random() * 26 ) + 65
-                const response = getRandomCaracter(getRandomlowerCharacter)
+                let getRandomNumber = Math.floor(Math.random() * 26 ) + 65
+                const response = getRandomCaracter(getRandomNumber)
                 setMyPassword(response)
                 
             }
             
             if ( document.querySelector('.lower-letters').checked ) {
                 
-                console.log('checkbox lower-letter is checked')
-                let getRandomlowerCharacter = Math.floor(Math.random() * 26 ) + 97
-                const response = getRandomCaracter(getRandomlowerCharacter)
+                let getRandomNumber = Math.floor(Math.random() * 26 ) + 97
+                const response = getRandomCaracter(getRandomNumber)
                 setMyPassword(response)
     
             }
@@ -50,10 +50,6 @@ export const Home = () => {
         } catch (error) {
 
             console.error(error.message)
-
-        } finally {
-
-            console.log('finalmente')
 
         }
         
