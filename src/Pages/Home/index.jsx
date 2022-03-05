@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import { Button } from '../../components/Button' 
 import { Header } from '../../components/Header'
@@ -7,26 +7,43 @@ import { Range } from '../../components/Range'
 
 import { View, Container, Options } from './style'
 
-
 export const Home = () => {
+
+    const [ myPassword, setMyPassword ] = useState('')
 
     const createPassword = () => {
 
-        if ( document.querySelector('.numbers').checked ) {
+        console.log('entrei na função')
+
+        try {
+
+            if ( document.querySelector('.numbers').checked ) {
             
-            console.log('numbers checkbox is checked')
-        
-        }
-        
-        if ( document.querySelector('.upper-letters').checked ) {
+                console.log('numbers checkbox is checked')
+            
+            }
+            
+            if ( document.querySelector('.upper-letters').checked ) {
+    
+                console.log('checkbox upper-letters is checked')
+                setMyPassword(Math.floor(Math.random() * 26 ) + 97)
+                console.log(myPassword)
+    
+            }
+            
+            if ( document.querySelector('.lower-letters').checked ) {
+    
+                console.log('checkbox lower-letter is checked')
+    
+            }
 
-            console.log('checkbox upper-letters is checked')
+        } catch (error) {
 
-        }
-        
-        if ( document.querySelector('.lower-letters').checked ) {
+            console.error(error.message)
 
-            console.log('checkbox lower-letter is checked')
+        } finally {
+
+            console.log('finalmente')
 
         }
         
@@ -40,7 +57,7 @@ export const Home = () => {
 
             <View type = "text">
                 
-                <h4>123456789123</h4>
+                <h4>{ myPassword }</h4>
                 
             </View>
 
