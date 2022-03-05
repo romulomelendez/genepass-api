@@ -32,6 +32,9 @@ export const Home = () => {
             if ( document.querySelector('.upper-letters').checked ) {
     
                 console.log('checkbox upper-letters is checked')
+                let getRandomlowerCharacter = Math.floor(Math.random() * 26 ) + 65
+                const response = getRandomCaracter(getRandomlowerCharacter)
+                setMyPassword(response)
                 
             }
             
