@@ -20,14 +20,19 @@ export const Home = () => {
     const createPwd = (length) => {
 
         const charArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-        for (let i = 0; i < length; i++) {
+        let pwd = ''
+        let i = 0
 
-            const randomNumber = Math.floor(Math.random() * charArray.length)
-            // eslint-disable-next-line no-unused-expressions
-            charArray[randomNumber]
+        while( i < length ) {
+
+            charArray.toString()
+            let randomNumber = Math.floor(Math.random() * charArray.length)
+            pwd += charArray[randomNumber] 
             i++
-
+            
         }
+        
+        setMyPassword(pwd)
 
     }
 
@@ -86,7 +91,7 @@ export const Home = () => {
 
             </Options>
 
-            <Button onClick = { createPassword } />
+            <Button onClick = { () => createPwd(5) } />
 
         </Container>
 
