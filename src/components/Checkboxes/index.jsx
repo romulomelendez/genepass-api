@@ -1,8 +1,32 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 import { Section } from './style'
 
 export const Checkboxes = () => {
+
+    const [ numbers, setNumbers ] = useState(false)
+    const [ uppers, setUppers ] = useState(false)
+    const [ lowers, setLowers ] = useState(false)
+
+    const data = {
+
+        number: false,
+        upper: false,
+        lower: false
+
+    }
+
+    useEffect(() => {
+        
+        console.log({
+
+            number: numbers,
+            upper: uppers,
+            lower: lowers
+
+        })
+
+    }, [numbers, uppers, lowers])
 
     return (
 
@@ -10,21 +34,21 @@ export const Checkboxes = () => {
 
             <div>
 
-                <input type = "checkbox" className = "numbers" />
+                <input type = "checkbox" className = "numbers" onChange = { (e) => setNumbers(e.target.checked) } />
                 <label>Numbers</label>
 
             </div>
 
             <div>
 
-                <input type = "checkbox" className = "upper-letters" />
+                <input type = "checkbox" className = "upper-letters" onChange = { (e) => setUppers(e.target.checked) } />
                 <label>Upper Letters</label>
 
             </div>
 
             <div>
 
-                <input type = "checkbox" className = "lower-letters" />
+                <input type = "checkbox" className = "lower-letters" onChange = { (e) => setLowers(e.target.checked) } />
                 <label>Lower Letters</label>
 
             </div>

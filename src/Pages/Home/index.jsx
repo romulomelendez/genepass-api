@@ -34,31 +34,25 @@ export const Home = () => {
 
     }
 
-    const createPassword = () => {
+    const verifyCheckbox = () => {
 
         try {
 
             if ( document.querySelector('.numbers').checked ) {
             
-                let getRandomNumber = Math.floor(Math.random() * 10 ) + 48
-                const response = getRandomCharacter(getRandomNumber)
-                setMyPassword(response)
+                
             
             }
             
             if ( document.querySelector('.upper-letters').checked ) {
     
-                let getRandomNumber = Math.floor(Math.random() * 26 ) + 65
-                const response = getRandomCharacter(getRandomNumber)
-                setMyPassword(response)
+                
                 
             }
             
             if ( document.querySelector('.lower-letters').checked ) {
                 
-                let getRandomNumber = Math.floor(Math.random() * 26 ) + 97
-                const response = getRandomCharacter(getRandomNumber)
-                setMyPassword(response)
+                
     
             }
 
@@ -89,7 +83,7 @@ export const Home = () => {
 
             </Options>
 
-            <Button onClick = { () => createPwd(5) } />
+            <Button onClick = { () => verifyCheckbox() } />
 
         </Container>
 
