@@ -17,23 +17,16 @@ export const Home = () => {
     
     }
 
-    const createPwd = async (length) => {
+    const createPwd = (length) => {
 
-        //const charArray = ['0',' 1', '2', '3', '4', '5', '6', '7', '8', '9']
         let pwd = ''
         let i = 0
 
         while( i < length ) {
 
-            //charArray.toString()
-            //let randomNumber = Math.floor(Math.random() * charArray.length)
-            //pwd += charArray[randomNumber] 
-            //i++
-            let response = await getRandomCharacter( Math.floor( Math.random() * 10 ) + 48 )
-            response.toString()
+            let response = (getRandomCharacter(Math.floor(Math.random() * 10) + 48)).toString()
             pwd += response
             i++
-
             
         }
         
