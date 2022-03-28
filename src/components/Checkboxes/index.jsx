@@ -8,21 +8,15 @@ export const Checkboxes = () => {
     const [ uppers, setUppers ] = useState(false)
     const [ lowers, setLowers ] = useState(false)
 
-    const data = {
-
-        number: false,
-        upper: false,
-        lower: false
-
-    }
+    const [ data, setData ] = useState({})
 
     useEffect(() => {
         
-        console.log({
+        setData({
 
-            number: numbers,
-            upper: uppers,
-            lower: lowers
+            allowNumber: numbers,
+            allowUpper: uppers,
+            allowLower: lowers
 
         })
 
@@ -36,6 +30,7 @@ export const Checkboxes = () => {
 
                 <input type = "checkbox" className = "numbers" onChange = { (e) => setNumbers(e.target.checked) } />
                 <label>Numbers</label>
+                { console.log(data) }
 
             </div>
 
