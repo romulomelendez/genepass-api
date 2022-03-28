@@ -34,36 +34,6 @@ export const Home = () => {
 
     }
 
-    const verifyCheckbox = () => {
-
-        try {
-
-            if ( document.querySelector('.numbers').checked ) {
-            
-                
-            
-            }
-            
-            if ( document.querySelector('.upper-letters').checked ) {
-    
-                
-                
-            }
-            
-            if ( document.querySelector('.lower-letters').checked ) {
-                
-                
-    
-            }
-
-        } catch (error) {
-
-            console.error(error.message)
-
-        }
-        
-    }
-
     return (
 
         <Container>
@@ -83,7 +53,7 @@ export const Home = () => {
 
             </Options>
 
-            <Button onClick = { () => verifyCheckbox() } />
+            <Button onClick = { () => createPwd(5) } />
 
         </Container>
 
