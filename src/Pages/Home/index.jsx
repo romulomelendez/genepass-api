@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
 import { RangeContext } from '../../contexts/RangeContext'
+import { CheckboxesContext } from '../../contexts/CheckboxesContext'
 
 import { Button } from '../../components/Button' 
 import { Header } from '../../components/Header'
@@ -14,6 +15,7 @@ export const Home = () => {
 
     const [ myPassword, setMyPassword ] = useState('')
     const { inputRange } = useContext(RangeContext)
+    const { checkboxesData } = useContext(CheckboxesContext)
 
     const getRandomCharacter = (randomCharacter) => {
         
@@ -25,6 +27,7 @@ export const Home = () => {
 
         let pwd = ''
         let i = 0
+        console.log(checkboxesData)
 
         while( i < length ) {
 

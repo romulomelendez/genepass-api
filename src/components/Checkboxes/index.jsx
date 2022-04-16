@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
+
+import { CheckboxesContext } from '../../contexts/CheckboxesContext'
 
 import { Section } from './style'
 
@@ -8,11 +10,11 @@ export const Checkboxes = () => {
     const [ uppers, setUppers ] = useState(false)
     const [ lowers, setLowers ] = useState(false)
 
-    const [ data, setData ] = useState({})
+    const { setCheckboxesData } = useContext(CheckboxesContext)
 
     useEffect(() => {
         
-        setData({
+        setCheckboxesData({
 
             allowNumber: numbers,
             allowUpper: uppers,
@@ -20,7 +22,7 @@ export const Checkboxes = () => {
 
         })
 
-    }, [numbers, uppers, lowers])
+    }, [numbers, uppers, lowers, setCheckboxesData])
 
     return (
 
