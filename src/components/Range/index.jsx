@@ -1,11 +1,12 @@
-import React, { useState, useContext } from 'react'
-// import RangeContext from '../../contexts/RangeContext'
+import React, { useContext } from 'react'
+
+import { RangeContext } from '../../contexts/RangeContext'
 
 import { Section } from './style'
 
 export const Range = () => {
 
-    const [ inputRange , setInputRange ] = useState(8)
+    const { inputRange , setInputRange } = useContext(RangeContext)
 
     return (
 

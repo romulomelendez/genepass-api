@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
 
+import { RangeContext } from '../../contexts/RangeContext'
+
 import { Button } from '../../components/Button' 
 import { Header } from '../../components/Header'
 import { Checkboxes } from '../../components/Checkboxes'
+import { useContext } from 'react'
 import { Range } from '../../components/Range'
 
 import { View, Container, Options } from './style'
@@ -10,6 +13,7 @@ import { View, Container, Options } from './style'
 export const Home = () => {
 
     const [ myPassword, setMyPassword ] = useState('')
+    const { inputRange } = useContext(RangeContext)
 
     const getRandomCharacter = (randomCharacter) => {
         
@@ -53,7 +57,7 @@ export const Home = () => {
 
             </Options>
 
-            <Button onClick = { () => createPwd(5) } />
+            <Button onClick = { () => createPwd(inputRange) } />
 
         </Container>
 
