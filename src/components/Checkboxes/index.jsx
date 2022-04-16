@@ -30,7 +30,6 @@ export const Checkboxes = () => {
 
                 <input type = "checkbox" className = "numbers" onChange = { (e) => setNumbers(e.target.checked) } />
                 <label>Numbers</label>
-                { console.log(data) }
 
             </div>
 
