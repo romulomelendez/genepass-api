@@ -4,24 +4,17 @@ import { Section } from './style'
 
 export const Range = () => {
 
-    const [ rangeHeight , setRangeHeight ] = useState(8)
-
-    const getRangeWidth = () => {
-
-        let rangeWidth = parseInt(document.querySelector('#input-range').value)
-        setRangeHeight(rangeWidth)
-
-    }
+    const [ inputRange , setInputRange ] = useState(8)
 
     return (
 
         <Section>
 
-            <div>The password width is: { rangeHeight }</div>
+            <div>The password width is: { inputRange }</div>
             <div>
 
-                <input type = "range" id = "input-range" value = { rangeHeight } min = "4" max = "12" step = "1" onChange = { getRangeWidth } />
-
+                <input type = "range" id = "input-range" value = { inputRange } min = "4" max = "12" step = "1" onChange = { e => setInputRange(Number(e.target.value)) } />
+                
             </div>
 
         </Section>
