@@ -1,7 +1,7 @@
 ## 🚧 Under construction 🚧
 <br/>
  
-![Screenshot](./public/assets/images/image01.png)
+![Screenshot](./public/assets/images/screenshot.png)
 
 ## Run the project locally
 
