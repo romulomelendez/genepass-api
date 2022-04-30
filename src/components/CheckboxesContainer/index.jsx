@@ -4,7 +4,7 @@ import { CheckboxesContext } from '../../contexts/CheckboxesContext'
 
 import { Section } from './style'
 
-export const Checkboxes = () => {
+export const CheckboxesContainer = () => {
 
     const [ numbers, setNumbers ] = useState(false)
     const [ uppers, setUppers ] = useState(false)

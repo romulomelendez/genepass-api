@@ -5,7 +5,7 @@ import { CheckboxesContext } from '../../contexts/CheckboxesContext'
 
 import { Button } from '../../components/Button' 
 import { Header } from '../../components/Header'
-import { Checkboxes } from '../../components/Checkboxes'
+import { CheckboxesContainer } from '../../components/CheckboxesContainer'
 import { useContext } from 'react'
 import { Range } from '../../components/Range'
 
@@ -135,7 +135,7 @@ export const Home = () => {
             <Options>
 
                 <Range />
-                <Checkboxes />
+                <CheckboxesContainer />
 
             </Options>
 
