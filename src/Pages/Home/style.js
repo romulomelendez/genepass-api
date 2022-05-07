@@ -4,7 +4,9 @@ export const Container = styled.div `
 
     display: flex;
     flex-direction: column;
-    max-width: 800px;
+    align-items: center;
+    min-width: 800px;
+    max-width: 1000px;
     
 `
 
@@ -15,7 +17,7 @@ export const View = styled.div `
     padding: 10px;
     margin: 10px;
     height: 150px;
-    width: 800px;
+    width: 100%;
     border-radius: 10px;
     border: 1px solid black;
     font-size: 80pt;
@@ -29,6 +31,7 @@ export const Options = styled(View) `
     align-items: center;
     justify-content: space-between;
     padding: 20px;
+    width: 800px;
     font-size: 18pt;
 
 `
