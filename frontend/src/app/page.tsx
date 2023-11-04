@@ -12,7 +12,7 @@ const Home: React.FC = () => {
 
         {/* Password Display */}
         <section className="w-9/12">
-          <input type="text" className="p-2 w-full h-28 text-violet-700 text-5xl rounded-2xl outline-none text-center bg-slate-900" />
+          <input type="text" className="p-2 w-full h-15 text-violet-700 text-2xl rounded-2xl outline-none text-center bg-slate-900" />
         </section>
 
         {/* Action buttons */}
