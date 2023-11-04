@@ -1,8 +1,8 @@
 const Home: React.FC = () => {
 
   return (
-    <div className="bg-slate-900 text-white w-screen h-screen flex justify-center items-center">
-      <div className="bg-slate-950 w-3/4 min-h-screen flex flex-col justify-center items-center gap-10 rounded-md">
+    <div className="bg-slate-900 text-white sm:w-screen h-screen flex justify-center items-center">
+      <div className="bg-slate-950 w-screen sm:w-3/4 h-screen p-5 flex flex-col justify-center items-center gap-10 rounded-md">
     
         {/* App Title/Subtitle */}
         <section className="text-center flex flex-col gap-1">
@@ -11,15 +11,15 @@ const Home: React.FC = () => {
         </section>
 
         {/* Password Display */}
-        <section className="w-9/12">
-          <input type="text" className="p-2 w-full h-15 text-violet-700 text-2xl rounded-2xl outline-none text-center bg-slate-900" />
+        <section>
+          <input type="text" className="p-2 h-15 sm:h-28 w-64 sm:w-full text-violet-700 text-2xl sm:text-5xl rounded-2xl outline-none text-center bg-slate-900" />
         </section>
 
         {/* Action buttons */}
-        <section className="relative grid grid-cols-2 p-7 h-48 w-9/12 bg-slate-900 rounded-2xl">
+        <section className="flex flex-col sm:flex-row p-7 gap-8 h-auto w-auto justify-center bg-slate-900 rounded-2xl">
           <div className="flex flex-col gap-3 justify-center items-center">
-            <h4>10</h4>
-            <input type="range" step="1" min="4" max="12" className="w-44" />
+            <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">10</label>
+            <input id="default-range" type="range" min="4" max="12" step="1" className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700" />
           </div>
           <div className="flex flex-col gap-2 justify-center ml-9">
             <div className="flex gap-3 items-center">
@@ -42,8 +42,8 @@ const Home: React.FC = () => {
         </section>
 
         {/*  Create Password Button */}
-        <section className="w-9/12 flex justify-end">
-          <button type="button" className="bg-violet-800 w-max p-5 rounded-2xl text-lg hover:bg-violet-900">
+        <section className="w-auto sm:w-96 flex justify-center sm:justify-end">
+          <button type="button" className="bg-violet-800 w-max p-4 rounded-2xl text-lg hover:bg-violet-900">
             Create Password
           </button>
         </section>
