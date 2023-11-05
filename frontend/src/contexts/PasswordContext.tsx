@@ -1,6 +1,6 @@
 import { createContext, ReactNode, useState } from "react"
 
-const PasswordContext = createContext({})
+export const PasswordContext = createContext({})
 
 export const PasswordProvider = ({ children }: { children: ReactNode }) => {
 
