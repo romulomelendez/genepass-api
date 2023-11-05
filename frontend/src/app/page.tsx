@@ -1,15 +1,12 @@
 import Header from '../components/Header'
+import PasswordDisplay from '../components/PasswordDisplay'
 
 const Home: React.FC = async () => (
   <div className="bg-slate-900 text-white sm:w-screen h-screen flex justify-center items-center">
     <div className="bg-slate-950 w-screen sm:w-3/4 h-screen p-5 flex flex-col justify-center items-center gap-10 rounded-md">
 
       <Header />
-
-      {/* Password Display */}
-      <section>
-        <input type="text" className="p-2 h-15 sm:h-28 w-64 sm:w-full text-violet-700 text-2xl sm:text-5xl rounded-2xl outline-none text-center bg-slate-900" />
-      </section>
+      <PasswordDisplay />
 
       {/* Action buttons */}
       <section className="flex flex-col sm:flex-row p-7 gap-8 h-auto w-auto justify-center bg-slate-900 rounded-2xl">
