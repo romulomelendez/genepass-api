@@ -1,13 +1,23 @@
+"use client"
+
+import { useState } from "react"
+
 import Checkbox from "./Checkbox"
 
 const ActionButtons: React.FC = () => {
+
+    const [pwdLength, setPwdLength] = useState<string>("8")
+
+    const handlePwdLength = (pwdLength: string) => setPwdLength(pwdLength)
 
     return (
     
         <section className="flex flex-col sm:flex-row p-7 gap-8 h-auto w-auto justify-center bg-slate-900 rounded-2xl">
             <div className="flex flex-col gap-3 justify-center items-center">
-                <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">10</label>
-                <input type="range" min="4" max="12" step="1" className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700" />
+                <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                    { pwdLength }
+                </label>
+                <input type="range" min="4" max="12" step="1" onChange={e => handlePwdLength(e.target.value)} value={pwdLength} className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700" />
             </div>
             <div className="flex flex-col gap-2 justify-center ml-9">
                 <div className="flex gap-3 items-center">
