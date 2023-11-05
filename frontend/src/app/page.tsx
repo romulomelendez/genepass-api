@@ -1,6 +1,7 @@
 import Header from '../components/Header'
 import PasswordDisplay from '../components/PasswordDisplay'
 import ActionButtons from '../components/ActionButtons'
+import CreatePwdBtn from '../components/CreatePwdBtn'
 
 const Home: React.FC = async () => (
   <div className="bg-slate-900 text-white sm:w-screen h-screen flex justify-center items-center">
@@ -9,13 +10,8 @@ const Home: React.FC = async () => (
       <Header />
       <PasswordDisplay />
       <ActionButtons />
-
-      {/*  Create Password Button */}
-      <section className="w-auto sm:w-96 flex justify-center sm:justify-end">
-        <button type="button" className="bg-violet-800 w-max p-4 rounded-2xl text-lg hover:bg-violet-900">
-          Create Password
-        </button>
-      </section>
+      <CreatePwdBtn />
+      
     </div>
   </div>
 )
