@@ -1,18 +1,17 @@
-import { createContext, ReactNode, useState } from "react"
+import { createContext } from "react"
 
-export const PasswordContext = createContext({})
-
-export const PasswordProvider = ({ children }: { children: ReactNode }) => {
-
-    const [isChecked, setIsChecked] = useState(false)
-
-    // const handleCheckbox = ({ functionName , isChecked }) => {}
-
-    return (
-
-        <PasswordContext.Provider value={{ isChecked }}>
-            { children }
-        </PasswordContext.Provider>
-
-    )
+type PwdContextProps = {
+    pwdLength: string,
+    setPwdLength: (newPwdLength: string) => void,
+    handlePwdLength: (pwdLength: string) => void,
+    isChecked: boolean
 }
+
+const initialValues = {
+    pwdLength: "8",
+    setPwdLength: (newPwdLength: string) => {},
+    handlePwdLength: (pwdLength: string) => {},
+    isChecked: false
+}
+
+export const PasswordContext = createContext<PwdContextProps>(initialValues)

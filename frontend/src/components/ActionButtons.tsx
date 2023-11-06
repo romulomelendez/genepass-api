@@ -1,14 +1,12 @@
 "use client"
 
-import { useState } from "react"
-
 import Checkbox from "./Checkbox"
+
+import { usePwd } from '../hooks/usePwd'
 
 const ActionButtons: React.FC = () => {
 
-    const [pwdLength, setPwdLength] = useState<string>("8")
-
-    const handlePwdLength = (pwdLength: string) => setPwdLength(pwdLength)
+    const { pwdLength, handlePwdLength } = usePwd()
 
     return (
     
