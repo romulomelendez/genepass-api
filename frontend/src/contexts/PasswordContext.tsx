@@ -1,24 +1,26 @@
 import { createContext } from "react"
 
-export type CheckboxProps = {
-    functionName: string,
-    isChecked: boolean
+import { PwdProps } from "../providers/PasswordProvider"
+
+export type PwdPreferences = {
+    name: string,
+    content: boolean | string,
 }
 
 type PwdContextProps = {
-    pwdLength: string,
-    setPwdLength: (newPwdLength: string) => void,
-    handlePwdLength: (pwdLength: string) => void,
-    isChecked: boolean,
-    handleCheckbox: ({ functionName, isChecked }: CheckboxProps) => void
+    pwdData: PwdProps,
+    handlePwdUserPreferences: ({ name, content }: PwdPreferences) => void
 }
 
-const initialValues = {
-    pwdLength: "8",
-    setPwdLength: () => {},
-    handlePwdLength: () => {},
-    isChecked: false,
-    handleCheckbox: () => {},
+export const initialValues = {
+    pwdData: {
+        length: "8",
+        symbols: false,
+        numbers: false,
+        capitalLetters: false,
+        smallLetters: false
+    },
+    handlePwdUserPreferences: () => {}
 }
 
 export const PasswordContext = createContext<PwdContextProps>(initialValues)
