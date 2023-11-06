@@ -19,16 +19,16 @@ const ActionButtons: React.FC = () => {
             </div>
             <div className="flex flex-col gap-2 justify-center ml-9">
                 <div className="flex gap-3 items-center">
-                    <Checkbox functionName="Symbols" />
+                    <Checkbox functionName="symbols" name="Symbols" />
                 </div>
                 <div className="flex gap-3 items-center">
-                    <Checkbox functionName="Numbers" />
+                    <Checkbox functionName="numbers" name="Numbers" />
                 </div>
                 <div className="flex gap-3 items-center">
-                    <Checkbox functionName="Capital Letters" />
+                    <Checkbox functionName="capitalLetters" name="Capital Letters" />
                 </div>
                 <div className="flex gap-3 items-center">
-                    <Checkbox functionName="Small Letters" />
+                    <Checkbox functionName="smallLetters" name="Small Letters" />
                 </div>
             </div>
         </section>
