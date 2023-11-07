@@ -21,6 +21,7 @@ export type PwdProps = {
 export const PasswordProvider = ({ children }: PwdProviderProps) => {
 
     const [pwdData, setPwdData] = useState<PwdProps>(initialValues.pwdData)
+    const [password, setPassword] = useState<any>("")
 
     const handlePwdUserPreferences = ({ name, content }: PwdPreferences): void => {
 
@@ -35,11 +36,23 @@ export const PasswordProvider = ({ children }: PwdProviderProps) => {
         setPwdData( prevState => { return { ...prevState, auxObject } })
     }
 
+    const createPwd = async () => {
+        const pwdDataResponse = await fetch("http://localhost:3333/api/createPwd", {
+            mode: "cors",
+            method: "POST",
+            body: JSON.stringify(pwdData),
+        })
+        const pwd = await pwdDataResponse.json()
+        setPassword(pwd)
+    }
+
     return (
 
         <PasswordContext.Provider value={{ 
             pwdData,
-            handlePwdUserPreferences
+            handlePwdUserPreferences,
+            password,
+            createPwd
         }}>
             { children }
         </PasswordContext.Provider>

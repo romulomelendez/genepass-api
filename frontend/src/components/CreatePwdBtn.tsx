@@ -1,4 +1,10 @@
+"use client"
+
+import { usePwd } from "../hooks/usePwd"
+
 const CreatePwdBtn = () => {
+
+    const { createPwd } = usePwd()
 
     return (
 
@@ -6,6 +12,7 @@ const CreatePwdBtn = () => {
             <button
                 type="button"
                 className="bg-violet-800 w-max p-4 rounded-2xl text-lg hover:bg-violet-900"
+                onClick={createPwd}
             >
                 Create Password
             </button>

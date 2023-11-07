@@ -9,7 +9,9 @@ export type PwdPreferences = {
 
 type PwdContextProps = {
     pwdData: PwdProps,
-    handlePwdUserPreferences: ({ name, content }: PwdPreferences) => void
+    handlePwdUserPreferences: ({ name, content }: PwdPreferences) => void,
+    password: string
+    createPwd: () => void,
 }
 
 export const initialValues = {
@@ -20,7 +22,9 @@ export const initialValues = {
         capitalLetters: false,
         smallLetters: false
     },
-    handlePwdUserPreferences: () => {}
+    password: "",
+    handlePwdUserPreferences: () => {},
+    createPwd: () => {}
 }
 
 export const PasswordContext = createContext<PwdContextProps>(initialValues)
