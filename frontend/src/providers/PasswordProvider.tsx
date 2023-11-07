@@ -21,26 +21,28 @@ export type PwdProps = {
 export const PasswordProvider = ({ children }: PwdProviderProps) => {
 
     const [pwdData, setPwdData] = useState<PwdProps>(initialValues.pwdData)
-    const [password, setPassword] = useState<any>("")
+    const [password, setPassword] = useState("")
 
     const handlePwdUserPreferences = ({ name, content }: PwdPreferences): void => {
 
-        if(!(name in pwdData))
-            return
+        let auxObject = initialValues.pwdData
 
-        let auxObject = pwdData
         auxObject = Object.defineProperty(pwdData, name, {
             value: content
         })
 
-        setPwdData( prevState => { return { ...prevState, auxObject } })
+        setPwdData({ ...auxObject })
     }
 
     const createPwd = async () => {
+
+        console.log(JSON.stringify(pwdData))
         const pwdDataResponse = await fetch("http://localhost:3333/api/createPwd", {
-            mode: "cors",
             method: "POST",
-            body: JSON.stringify(pwdData),
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(pwdData)
         })
         const pwd = await pwdDataResponse.json()
         setPassword(pwd)
