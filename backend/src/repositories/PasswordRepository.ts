@@ -1,13 +1,14 @@
-type pwdBodyProps = {
-    length: string | number,
-    symbols: boolean,
-    numbers: boolean,
-    capitalLetters: boolean,
-    smallLetters: boolean,
-}
+import { iPasswordRepository } from '../interfaces/iPasswordRepository'
+import { pwdBodyProps } from '../types'
 
-export class PasswordRepository {
-    public getPwdLength = (body: pwdBodyProps): number => {
-        return Number(body.length)
+export class PasswordRepository implements iPasswordRepository {
+
+    public create(body: pwdBodyProps): string {
+        
+        return ""
     }
+
+    // public getPwdLength = (body: pwdBodyProps): number => {
+    //     return Number(body.length)
+    // }
 }
