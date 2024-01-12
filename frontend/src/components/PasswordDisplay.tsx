@@ -12,7 +12,7 @@ const PasswordDisplay: React.FC = () => {
     const handleCopy = (): void | Boolean | string => password && copy(password)
 
     return (
-        <section className="flex justify-between p-1 h-15 sm:h-28 w-64 sm:w-fit max-w-xl rounded-2xl bg-slate-900">
+        <section className="flex justify-between p-1 h-15 sm:h-28 w-64 sm:w-fit max-w-xl rounded-2xl bg-slate-900 sm:mt-10">
             <input
               type="text"
               className="bg-slate-900 h-full w-52 sm:w-full p-4 text-violet-700 text-2xl sm:text-5xl outline-none text-center"
