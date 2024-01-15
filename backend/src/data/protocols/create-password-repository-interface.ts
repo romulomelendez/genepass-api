@@ -1,7 +1,7 @@
 import { PasswordBody } from "../../domain/models"
 
 export interface CreatePasswordRepositoryInterface {
-    execute: (params: CreatePasswordRepositoryInterface.Params) => Promise<CreatePasswordRepositoryInterface.Result>
+    execute: (params: CreatePasswordRepositoryInterface.Params) => CreatePasswordRepositoryInterface.Result
 }
 
 export namespace CreatePasswordRepositoryInterface {

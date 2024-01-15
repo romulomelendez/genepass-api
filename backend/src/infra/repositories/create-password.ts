@@ -11,13 +11,13 @@ export class CreatePasswordRepository implements CreatePasswordRepositoryInterfa
 
     ) {}
 
-    execute = async (pwdBody: PasswordBody) => {
+    execute = (pwdBody: PasswordBody) => {
 
         const verifyPwdSpecs = (pwdBody: PasswordBody): string[] => Object.keys(pwdBody).filter(key => pwdBody[key] === true)
 
         const pwdSpecsKeys: string[] = verifyPwdSpecs(pwdBody)
         const countPwdTrueValues = pwdSpecsKeys.length
-
+        
         const createPreferenceCharactersArr = (pwdSpecsKeys: string[]): string[] => {
 
             let auxArr: string[] = []
@@ -64,13 +64,12 @@ export class CreatePasswordRepository implements CreatePasswordRepositoryInterfa
         const mixedArray = mixArray(preferencesPwdArr)
 
         const createPwd = (mixedArray: string[], pwdLength: number): string => {
-            
             let auxPwd = ""
 
-            for(let i = 0; i < +pwdLength; i++) {
+            for(let i = 0; i < pwdLength; i++) {
                 
-                let randomNumber = Math.floor(Math.random() * (mixedArray.length - 0 + 1)) + 0
-                auxPwd = auxPwd + mixArray[randomNumber]
+                let randomNumber = Math.floor(Math.random() * (mixedArray.length - 0)) + 0
+                auxPwd = auxPwd + mixedArray[randomNumber]
             }
 
             return auxPwd
