@@ -4,6 +4,8 @@ import { CreatePasswordRepository } from "../infra/repositories/create-password"
 
 describe("Create Password", () => {
 
+    beforeEach(() => console.log("----------------------------------------------------------------"))
+
     test("It should create a password with just one preference", () => {
 
         const pwdSpecsObj: PasswordBody = {
