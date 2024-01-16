@@ -18,6 +18,11 @@ export type PwdProps = {
     smallLetters: boolean
 }
 
+type PasswordApiResponse = {
+    data: string,
+    message?: string
+}
+
 export const PasswordProvider = ({ children }: PwdProviderProps) => {
 
     const [pwdData, setPwdData] = useState<PwdProps>(initialValues.pwdData)
@@ -36,7 +41,6 @@ export const PasswordProvider = ({ children }: PwdProviderProps) => {
 
     const createPwd = async () => {
 
-        console.log(JSON.stringify(pwdData))
         const pwdDataResponse = await fetch("http://localhost:3333/api/createPwd", {
             method: "POST",
             headers: {
@@ -44,8 +48,8 @@ export const PasswordProvider = ({ children }: PwdProviderProps) => {
             },
             body: JSON.stringify(pwdData)
         })
-        const pwd = await pwdDataResponse.json()
-        setPassword(pwd)
+        const pwd: PasswordApiResponse = await pwdDataResponse.json()
+        setPassword(pwd.data)
     }
 
     return (
