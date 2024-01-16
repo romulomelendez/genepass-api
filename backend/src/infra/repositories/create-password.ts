@@ -16,7 +16,7 @@ export class CreatePasswordRepository implements CreatePasswordRepositoryInterfa
         const verifyPwdSpecs = (pwdBody: PasswordBody): string[] => Object.keys(pwdBody).filter(key => pwdBody[key] === true)
 
         const pwdSpecsKeys: string[] = verifyPwdSpecs(pwdBody)
-        const countPwdTrueValues = pwdSpecsKeys.length
+        const countPwdTrueValues: number = pwdSpecsKeys.length
         
         const createPreferenceCharactersArr = (pwdSpecsKeys: string[]): string[] => {
 
@@ -49,33 +49,72 @@ export class CreatePasswordRepository implements CreatePasswordRepositoryInterfa
             return auxArr
         }
 
-        const mixArray = (preferencesPwdArr: string[]) => {
+        const mix = (pwdContent: string | string[]) => {
 
-            const newArray = [...preferencesPwdArr]
+            const newArray = [...pwdContent]
             for (let i = newArray.length - 1; i > 0; i--) {
                 const j = Math.floor(Math.random() * (i + 1));
                 [newArray[i], newArray[j]] = [newArray[j], newArray[i]]
             }
-
             return newArray
         }
 
+        const getRandomCharacterByArray = (array: string[]): string => {
+            const randomNumber = Math.floor(Math.random() * (array.length - 0)) + 0
+            return array[randomNumber]
+        }
+
         const preferencesPwdArr = createPreferenceCharactersArr(pwdSpecsKeys)
-        const mixedArray = mixArray(preferencesPwdArr)
+        const mixedArray = mix(preferencesPwdArr)
+        let password = ""
 
-        const createPwd = (mixedArray: string[], pwdLength: number): string => {
-            let auxPwd = ""
+        if(countPwdTrueValues !== 1) {
 
+            for(let i = 0; i < countPwdTrueValues; i++) {
+                
+                switch (pwdSpecsKeys[i]) {
+
+                    case "symbols":
+                        const randomSymbol = getRandomCharacterByArray(this.symbols)
+                        password += randomSymbol
+                        break
+
+                    case "numbers":
+                        const randomNumber = getRandomCharacterByArray(this.numbers)
+                        password += randomNumber
+                        break
+
+                    case "capitalLetters":
+                        const randomCapLetter = getRandomCharacterByArray(this.capitalLetters)
+                        password += randomCapLetter
+                        break
+
+                    case "smallLetters":
+                        const randomSmallLetter = getRandomCharacterByArray(this.smallLetters)
+                        password += randomSmallLetter
+                        break
+                
+                    default:
+                        break
+                }
+            }
+
+        }
+
+        const createPwd = (mixedArray: string[], pwdLength: number): void => {
+            
             for(let i = 0; i < pwdLength; i++) {
                 
                 let randomNumber = Math.floor(Math.random() * (mixedArray.length - 0)) + 0
-                auxPwd = auxPwd + mixedArray[randomNumber]
+                password += mixedArray[randomNumber]
             }
-
-            return auxPwd
+            mix(password)
         }
 
-        const password = createPwd(mixedArray, pwdBody.length)
+        createPwd(mixedArray, (pwdBody.length - password.length))
+
+        password = password.toString()
+        password = password.replace(/,/g, '')
 
         return password
     }
