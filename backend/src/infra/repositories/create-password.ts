@@ -67,6 +67,7 @@ export class CreatePasswordRepository implements CreatePasswordRepositoryInterfa
         const preferencesPwdArr = createPreferenceCharactersArr(pwdSpecsKeys)
         const mixedArray = mix(preferencesPwdArr)
         let password = ""
+        const passwordLengthByUserPreference = Number(pwdBody.length)
 
         if(countPwdTrueValues !== 1) {
 
@@ -111,7 +112,7 @@ export class CreatePasswordRepository implements CreatePasswordRepositoryInterfa
             mix(password)
         }
 
-        createPwd(mixedArray, (pwdBody.length - password.length))
+        createPwd(mixedArray, (passwordLengthByUserPreference - password.length))
 
         password = password.toString()
         password = password.replace(/,/g, '')

@@ -1,17 +1,19 @@
 import { Controller } from "../protocols"
 import { PasswordBody } from "../../domain/models"
 import { CreatePasswordRepository } from "../../infra/repositories/create-password"
+import { HttpHelper } from "../helpers"
 
 export class CreatePasswordController implements Controller {
     
-    constructor( private readonly createPasswordRepo: CreatePasswordRepository) {}
+    constructor(private readonly createPasswordRepo: CreatePasswordRepository) {}
 
     // @ts-ignore
-    handle = async (pwdBody: PasswordBody) => {
-        const password = await this.createPasswordRepo.execute(pwdBody)
+    handle = (pwdBody: PasswordBody) => {
 
-        // if (!password) return HttpHelper.NOT_FOUND()
+        const password = this.createPasswordRepo.execute(pwdBody)
 
-        // return HttpHelper.OK(password)
+        if (!password) return HttpHelper.INTERNAL_SERVER_ERROR("⚠️ Internal Server Error")
+
+        return HttpHelper.CREATED(password, "🆗 Password successfully created!")
     } 
 }
