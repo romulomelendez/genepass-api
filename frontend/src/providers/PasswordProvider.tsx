@@ -39,7 +39,7 @@ export const PasswordProvider = ({ children }: PwdProviderProps) => {
         setPwdData({ ...auxObject })
     }
 
-    const createPwd = async () => {
+    const createPwd = async (): Promise<void> => {
 
         const pwdDataResponse = await fetch("http://localhost:3333/api/createPwd", {
             method: "POST",
