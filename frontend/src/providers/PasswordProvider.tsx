@@ -1,27 +1,10 @@
 "use client"
 
-import { useState, ReactNode } from "react"
+import { useState } from "react"
 
 import { PasswordContext, initialValues } from "../contexts/PasswordContext"
 
-import { PwdPreferences } from "../contexts/PasswordContext"
-
-type PwdProviderProps = {
-    children: ReactNode
-}
-
-export type PwdProps = {
-    length: string,
-    symbols: boolean,
-    numbers: boolean,
-    capitalLetters: boolean
-    smallLetters: boolean
-}
-
-type PasswordApiResponse = {
-    data: string,
-    message?: string
-}
+import { PwdProviderProps, PwdProps, PasswordApiResponse, PwdPreferences } from "../types"
 
 export const PasswordProvider = ({ children }: PwdProviderProps) => {
 
