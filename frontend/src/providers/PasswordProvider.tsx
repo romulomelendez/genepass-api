@@ -24,7 +24,7 @@ export const PasswordProvider = ({ children }: PwdProviderProps) => {
 
     const createPwd = async (): Promise<void> => {
 
-        const pwdDataResponse = await fetch("http://localhost:3333/api/createPwd", {
+        const pwdDataResponse = await fetch(process.env.NEXT_PUBLIC_API_URL + "/api/createPwd", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
