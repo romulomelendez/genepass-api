@@ -1,5 +1,5 @@
-import Header from '../components/Header'
-import PasswordDisplay from '../components/PasswordDisplay'
+import Header from '@/components/Header'
+import PasswordDisplay from '@/components/PasswordDisplay'
 import ActionButtons from '@/components/ActionButtons'
 import CreatePwdBtn from '@/components/CreatePwdBtn'
 import Footer from '@/components/Footer'
