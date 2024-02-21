@@ -17,7 +17,3 @@ router.post("/api/createPwd", ({ body }: Request, res: Response) => {
         message
     })
 })
-
-router.get("/", (req: Request, res: Response) => {
-    res.status(200).json("OK")
-})
