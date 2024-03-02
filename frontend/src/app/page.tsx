@@ -9,7 +9,7 @@ const Home: React.FC = async () => (
   <div className="flex flex-col h-screen gap-2 items-center justify-evenly bg-slate-950">
     <PasswordProvider>
       <Header />
-      <div className="flex flex-col gap-5">
+      <div className="flex flex-col gap-5 sm:-mt-10">
         <PasswordDisplay />
         <ActionButtons />
         <CreatePwdBtn />
