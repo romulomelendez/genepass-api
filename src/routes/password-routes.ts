@@ -1,16 +1,16 @@
 import { Request, Response, Router } from "express"
 
-import { CreatePasswordRepository } from "../infra/repositories"
-import { CreatePasswordController } from "../presentation/controllers"
+import { PasswordRepository } from "../infra/repositories"
+import { PasswordController } from "../presentation/controllers"
 
 export const router = Router()
 
 router.post("/api/password/create", ({ body }: Request, res: Response) => {
 
-    const createPasswordRepository = new CreatePasswordRepository()
-    const createPasswordController = new CreatePasswordController(createPasswordRepository)
+    const passwordRepository = new PasswordRepository()
+    const passwordController = new PasswordController(passwordRepository)
 
-    const { statusCode, body: data, message } = createPasswordController.handle(body)
+    const { statusCode, body: data, message } = passwordController.handle(body)
 
     res.status(statusCode).json({
         data,

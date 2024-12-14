@@ -1,6 +1,6 @@
 import { describe, expect, test } from "@jest/globals"
 import { PasswordBody } from "../domain/models"
-import { CreatePasswordRepository } from "../infra/repositories/password-repository"
+import { PasswordRepository } from "../infra/repositories/password-repository"
 
 describe("Create Password", () => {
 
@@ -16,7 +16,7 @@ describe("Create Password", () => {
             smallLetters: false
         }
 
-        let password = new CreatePasswordRepository().execute(pwdSpecsObj)
+        let password = new PasswordRepository().execute(pwdSpecsObj)
 
         expect(typeof password).toBe("string")
         expect(password).toHaveLength(pwdSpecsObj.length)
@@ -32,7 +32,7 @@ describe("Create Password", () => {
             smallLetters: false
         }
 
-        let password = new CreatePasswordRepository().execute(pwdSpecsObj)
+        let password = new PasswordRepository().execute(pwdSpecsObj)
 
         expect(typeof password).toBe("string")
         expect(password).toHaveLength(pwdSpecsObj.length)
@@ -48,7 +48,7 @@ describe("Create Password", () => {
             smallLetters: false
         }
 
-        let password = new CreatePasswordRepository().execute(pwdSpecsObj)
+        let password = new PasswordRepository().execute(pwdSpecsObj)
 
         expect(typeof password).toBe("string")
         expect(password).toHaveLength(pwdSpecsObj.length)
@@ -64,7 +64,7 @@ describe("Create Password", () => {
             smallLetters: true
         }
 
-        let password = new CreatePasswordRepository().execute(pwdSpecsObj)
+        let password = new PasswordRepository().execute(pwdSpecsObj)
 
         expect(typeof password).toBe("string")
         expect(password).toHaveLength(pwdSpecsObj.length)
@@ -86,7 +86,7 @@ describe("Create Password", () => {
             return symbolsArray.some(symbol => pwdString.includes(symbol))
         }
 
-        let password = new CreatePasswordRepository().execute(pwdSpecsObj)
+        let password = new PasswordRepository().execute(pwdSpecsObj)
         const hasSymbolInPwd = hasSymbol(password, symbolsArr)
 
         expect(hasSymbolInPwd).toBeTruthy()
@@ -129,7 +129,7 @@ describe("Create Password", () => {
             return true
         }
 
-        const password = new CreatePasswordRepository().execute(pwdSpecsObj)
+        const password = new PasswordRepository().execute(pwdSpecsObj)
         const hasAllPreferencesInPwd = hasAllPreferences(password)
 
         expect(hasAllPreferencesInPwd).toBeTruthy()
