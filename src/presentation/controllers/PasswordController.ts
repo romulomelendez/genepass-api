@@ -1,11 +1,11 @@
-import { Controller } from "../protocols"
 import { PasswordBody } from "../../domain/models"
-import { CreatePasswordRepository } from "../../infra/repositories/create-password"
+import { PasswordRepository } from "../../infra/repositories/password-repository"
 import { HttpHelper } from "../helpers"
+import { Controller } from "../protocols"
 
 export class PasswordController implements Controller {
     
-    constructor(private readonly passwordRepository: CreatePasswordRepository) {}
+    constructor(private readonly passwordRepository: PasswordRepository) {}
    
     handle = (pwdBody: PasswordBody) => {
 

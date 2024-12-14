@@ -1,7 +1,7 @@
-import { CreatePasswordRepositoryInterface } from "../../data/protocols/create-password-repository-interface"
+import { PasswordRepositoryInterface } from "../../data"
 import { PasswordBody } from "../../domain/models"
 
-export class CreatePasswordRepository implements CreatePasswordRepositoryInterface {
+export class PasswordRepository implements PasswordRepositoryInterface {
 
     constructor(
         private readonly symbols: string[] = ["!", "@", "?", "-", "_", "=", "+", "*", "<", ">", ".", ";", ":", "{", "}", "[", "]", "#", "$", "%", "&"],

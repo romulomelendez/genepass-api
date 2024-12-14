@@ -1,6 +1,6 @@
 import { describe, expect, test } from "@jest/globals"
 import { PasswordBody } from "../domain/models"
-import { CreatePasswordRepository } from "../infra/repositories/create-password"
+import { CreatePasswordRepository } from "../infra/repositories/password-repository"
 
 describe("Create Password", () => {
 
