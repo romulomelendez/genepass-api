@@ -118,4 +118,19 @@ export class PasswordRepository implements PasswordRepositoryInterface {
 
         return password
     }
+
+    // Getters
+    getSymbols = () => {
+        return this.symbols
+    }
+    
+    getNumbers = () => {
+        return this.numbers
+    }
+    getCapitalLetters = () => {
+        return this.capitalLetters
+    }
+    getSmallLetters = () => {
+        return this.smallLetters
+    }
 }
