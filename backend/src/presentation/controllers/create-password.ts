@@ -12,8 +12,9 @@ export class CreatePasswordController implements Controller {
 
         const password = this.createPasswordRepo.execute(pwdBody)
 
-        if (!password) return HttpHelper.INTERNAL_SERVER_ERROR("⚠️ Internal Server Error")
+        if (!password)
+            return HttpHelper.INTERNAL_SERVER_ERROR("⚠️ Internal Server Error")
 
-        return HttpHelper.CREATED(password, "🆗 Password successfully created!")
+        return HttpHelper.SUCCESS(password, "🆗 Password successfully created!")
     } 
 }

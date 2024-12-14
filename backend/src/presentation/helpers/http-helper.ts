@@ -2,7 +2,7 @@ import { HttpResponse } from "../protocols"
 
 export class HttpHelper {
     
-    static CREATED = <T>(data: T, message?: string): HttpResponse<T> => ({
+    static SUCCESS = <T>(data: T, message?: string): HttpResponse<T> => ({
         statusCode: 201,
         body: data,
         message

@@ -5,7 +5,7 @@ import { CreatePasswordController } from "../presentation/controllers"
 
 export const router = Router()
 
-router.post("/api/createPwd", ({ body }: Request, res: Response) => {
+router.post("/api/password/create", ({ body }: Request, res: Response) => {
 
     const createPasswordRepository = new CreatePasswordRepository()
     const createPasswordController = new CreatePasswordController(createPasswordRepository)
