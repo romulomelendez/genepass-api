@@ -6,9 +6,18 @@ describe("Create Password", () => {
 
     beforeEach(() => console.log("----------------------------------------------------------------"))
 
-    test("It should create a password with just one preference", () => {
+    const areAllCharactersInArray = (password: string, preferenceArray: string[]): boolean => {
+        
+        const passwordConvertedToCharArray = [...password]
+        
+        return passwordConvertedToCharArray.every(char => preferenceArray.includes(char))
+    }
 
-        const pwdSpecsObj: PasswordBody = {
+    test("It should create a password with just one preference(symbols)", () => {
+        
+        const passwordRepository = new PasswordRepository()
+
+        const passwordSpecsObj: PasswordBody = {
             length: 10,
             symbols: true,
             numbers: false,
@@ -16,10 +25,14 @@ describe("Create Password", () => {
             smallLetters: false
         }
 
-        let password = new PasswordRepository().execute(pwdSpecsObj)
+        const password = passwordRepository.execute(passwordSpecsObj)
+        const symbolsArr = passwordRepository.getSymbols()
+
+        const areAllSymbols = areAllCharactersInArray(password, symbolsArr)
 
         expect(typeof password).toBe("string")
-        expect(password).toHaveLength(pwdSpecsObj.length)
+        expect(password).toHaveLength(passwordSpecsObj.length)
+        expect(areAllSymbols).toBeTruthy()
     })
 
     test("It should create a password with just two preference", () => {
