@@ -1,5 +1,4 @@
 import { PasswordSpecsInterface } from "../data/protocols"
-import { PasswordElementsProps } from "../domain/models"
 
 export class PasswordSpecs implements PasswordSpecsInterface {
 
@@ -10,14 +9,13 @@ export class PasswordSpecs implements PasswordSpecsInterface {
         private readonly smallLetters: string[] = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
     ) {}
 
-    createCharacterPreferenceArray = (elements: PasswordElementsProps): string[] => {
+    createCharacterPreferenceArray = (elements: string[]): string[] => {
 
-        const preferencesArr = Object.keys(elements)
         let auxArr: string[] = []
 
-        for(let i = 0; i < preferencesArr.length; i++) {
+        for(let i = 0; i < elements.length; i++) {
             
-            switch (preferencesArr[i]) {
+            switch (elements[i]) {
 
                 case "symbols":
                     auxArr = auxArr.concat(this.symbols)
