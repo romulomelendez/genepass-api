@@ -1,7 +1,6 @@
+import { PasswordElementsProps } from "."
+
 export interface PasswordBody {
     length: number,
-    symbols: boolean,
-    numbers: boolean,
-    capitalLetters: boolean,
-    smallLetters: boolean
+    elements: PasswordElementsProps
 }
