@@ -1,6 +1,4 @@
-import { PasswordElementsProps } from "../../domain/models"
-
-export interface PasswordSpecsInterface {
+export interface PasswordUtilsInterface {
     createCharacterPreferenceArray: (params: CreateCharacterPreferenceArrayInterface.Param) => CreateCharacterPreferenceArrayInterface.Result
     shuffleCharacterArray: (params: ShuffleCharacterArrayInterface.Param) => ShuffleCharacterArrayInterface.Result
     createPassword: (param1: CreatePasswordInterface.Param1, param2: CreatePasswordInterface.Param2) => CreatePasswordInterface.Result
@@ -10,7 +8,7 @@ export interface PasswordSpecsInterface {
 }
 
 export namespace CreateCharacterPreferenceArrayInterface {
-    export type Param = PasswordElementsProps
+    export type Param = string[]
     export type Result = string[]
 }
 

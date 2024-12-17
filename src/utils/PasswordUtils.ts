@@ -1,6 +1,6 @@
-import { PasswordSpecsInterface } from "../data/protocols"
+import { PasswordUtilsInterface } from "../data/protocols"
 
-export class PasswordSpecs implements PasswordSpecsInterface {
+export class PasswordUtils implements PasswordUtilsInterface {
 
     constructor(
         private readonly symbols: string[] = ["!", "@", "?", "-", "_", "=", "+", "*", "<", ">", ".", ";", ":", "{", "}", "[", "]", "#", "$", "%", "&"],

@@ -1,26 +1,26 @@
-import { PasswordRepositoryInterface, PasswordSpecsInterface } from "../../data/protocols"
+import { PasswordRepositoryInterface, PasswordUtilsInterface } from "../../data/protocols"
 import { PasswordBody } from "../../domain/models"
-import { PasswordSpecs } from "../../utils/"
+import { PasswordUtils } from "../../utils/"
 
 export class PasswordRepository implements PasswordRepositoryInterface {
 
     constructor(
-        private readonly passwordSpecs: PasswordSpecsInterface = new PasswordSpecs()
+        private readonly passwordUtils: PasswordUtilsInterface = new PasswordUtils()
     ) {}
 
     execute = ({ length: passwordLength, elements }: PasswordBody) => {
 
-        const preferencesArray = this.passwordSpecs.createCharacterPreferenceArray(elements)
+        const preferencesArray = this.passwordUtils.createCharacterPreferenceArray(elements)
 
-        const shuffledCharArray = this.passwordSpecs.shuffleCharacterArray(preferencesArray)
+        const shuffledCharArray = this.passwordUtils.shuffleCharacterArray(preferencesArray)
 
-        let password = this.passwordSpecs.createPassword(shuffledCharArray, +passwordLength)
+        let password = this.passwordUtils.createPassword(shuffledCharArray, +passwordLength)
 
-        let passwordVerified = this.passwordSpecs.validatePassword(password, preferencesArray)
+        let passwordVerified = this.passwordUtils.validatePassword(password, preferencesArray)
 
         while(!passwordVerified) {
-            password = this.passwordSpecs.createPassword(shuffledCharArray, +passwordLength)
-            passwordVerified = this.passwordSpecs.validatePassword(password, preferencesArray)
+            password = this.passwordUtils.createPassword(shuffledCharArray, +passwordLength)
+            passwordVerified = this.passwordUtils.validatePassword(password, preferencesArray)
         }
 
         return password

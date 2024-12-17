@@ -1,1 +1,1 @@
-export * from './PasswordSpecs'
+export * from './PasswordUtils'
