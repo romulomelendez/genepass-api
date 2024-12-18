@@ -9,36 +9,108 @@ export class PasswordUtils implements PasswordUtilsInterface {
         private readonly smallLetters: string[] = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
     ) {}
 
-    createCharacterPreferenceArray = (elements: string[]): string[] => {
+    convertPasswordArrayToString = (passwordArray: string[]): string => {
 
-        let auxArr: string[] = []
+        const finalPassword = passwordArray.join("")
 
-        for(let i = 0; i < elements.length; i++) {
-            
-            switch (elements[i]) {
+        return finalPassword
+    }
+
+    setBlankSpacesInInitialPassword = (length: number): string[] => {
+        return Array(length).fill("")
+    }
+
+    getRandomIndex = (length: number): number => {
+        return Math.floor(Math.random() * length)
+    }
+
+    getRandomElementInArray = (preferenceArr: string[]): string => {
+
+        const randomIndex = Math.floor(Math.random() * preferenceArr.length)
+        return preferenceArr[randomIndex]
+    }
+
+    setRandomElementInPasswordArray = (passwordArray: string[], randomElement: string): string[] => {
+        
+        let randomIndex = this.getRandomIndex(passwordArray.length)
+
+        while(passwordArray[randomIndex]) {
+            randomIndex = this.getRandomIndex(passwordArray.length)
+        }
+
+        passwordArray[randomIndex] = randomElement
+
+        return passwordArray
+    }
+
+    setOneCharacterOfEachUserPreference = (passwordArray: string[], elements: string[]): string[] => {
+        
+        let passwordArrayCopy = passwordArray
+        let randomElement = ""
+        
+        // get a random element in each preference
+        elements.map(preference => {
+
+            switch(preference) {
 
                 case "symbols":
-                    auxArr = auxArr.concat(this.symbols)
+                    randomElement = this.getRandomElementInArray(this.symbols)
+                    passwordArrayCopy = this.setRandomElementInPasswordArray(passwordArrayCopy, randomElement)
                     break
 
                 case "numbers":
-                    auxArr = auxArr.concat(this.numbers)
+                    randomElement = this.getRandomElementInArray(this.numbers)
+                    passwordArrayCopy = this.setRandomElementInPasswordArray(passwordArrayCopy, randomElement)
                     break
 
                 case "capitalLetters":
-                    auxArr = auxArr.concat(this.capitalLetters)
+                    randomElement = this.getRandomElementInArray(this.capitalLetters)
+                    passwordArrayCopy = this.setRandomElementInPasswordArray(passwordArrayCopy, randomElement)
                     break
 
                 case "smallLetters":
-                    auxArr = auxArr.concat(this.smallLetters)
+                    randomElement = this.getRandomElementInArray(this.smallLetters)
+                    passwordArrayCopy = this.setRandomElementInPasswordArray(passwordArrayCopy, randomElement)
                     break
             
                 default:
-                    break
+                    break 
             }
-        }
+        })
 
-        return auxArr
+        return passwordArrayCopy
+    }
+
+    createCharacterPreferenceArray = (elements: string[]): string[] => {
+
+        let superPreferencesArray: string[] = []
+
+        elements.map(element => {
+
+            switch(element) {
+
+                case "symbols":
+                    superPreferencesArray.push(...this.symbols)
+                    break
+
+                case "numbers":
+                    superPreferencesArray.push(...this.numbers)
+                    break
+
+                case "capitalLetters":
+                    superPreferencesArray.push(...this.capitalLetters)
+                    break
+
+                case "smallLetters":
+                    superPreferencesArray.push(...this.smallLetters)
+                    break
+            
+                default:
+                    break 
+            }
+        })
+
+        return superPreferencesArray
     }
 
     shuffleCharacterArray = (PwdCharArrayParams: string[]): string[] => {
@@ -53,16 +125,30 @@ export class PasswordUtils implements PasswordUtilsInterface {
         return newArray
     }
 
-    createPassword = (shuffledCharArray: string[], pwdLength: number): string => {
-        
-        let password = ''
-        for(let i = 0; i < pwdLength; i++) {
-            
-            let randomNumber = Math.floor(Math.random() * (shuffledCharArray.length - 0)) + 0
-            password += shuffledCharArray[randomNumber]
-        }
+    getFreeInidicesInArray = (passwordArray: string[]): number[] => {
 
-        return password
+        const indicesArray = passwordArray.reduce((indices, element, index) => {
+
+            if(element === "")
+                indices.push(index)
+            return indices
+        }, [])
+
+        return indicesArray
+    }
+
+    createPassword = (passwordWithSomeCharacters: string[], shuffledCharArray: string[]): string[] => {
+        
+        let passwordArray = passwordWithSomeCharacters
+        const freeIndices: number[] = this.getFreeInidicesInArray(passwordArray)
+
+        freeIndices.map(freeIndice => {
+
+            let randomElement = this.getRandomElementInArray(shuffledCharArray)
+            passwordArray[freeIndice] = randomElement
+        })
+
+        return passwordArray
     }
 
     fillPreferencesArray = (preferences: string[]): string[] => {
