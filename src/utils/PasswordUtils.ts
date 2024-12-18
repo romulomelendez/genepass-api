@@ -9,6 +9,22 @@ export class PasswordUtils implements PasswordUtilsInterface {
         private readonly smallLetters: string[] = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
     ) {}
 
+    getSymbols = (): string[] => {
+        return this.symbols
+    }
+
+    getNumbers = (): string[] => {
+        return this.numbers
+    }
+
+    getCapitalLetters = (): string[] => {
+        return this.capitalLetters
+    }
+    
+    getSmallLetters = (): string[] => {
+        return this.smallLetters
+    }
+
     convertPasswordArrayToString = (passwordArray: string[]): string => {
 
         const finalPassword = passwordArray.join("")
