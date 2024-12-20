@@ -3,9 +3,6 @@
     "version": "1.0.0",
     "description": "",
     "main": "app.ts",
-    "engines": {
-        "node": "18.x"
-    },
     "scripts": {
         "dev": "ts-node ./src/server.ts",
         "test": "jest",
